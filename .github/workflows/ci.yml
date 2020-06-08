@@ -11,7 +11,7 @@ jobs:
     - name: Clone
       uses: actions/checkout@v1
     - name: Configure
-      run: cmake . -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
+      run: cmake . -DCMAKE_BUILD_TYPE=${{ matrix.build }} -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
     - name: Build
       run: make -j
     - name: Test
