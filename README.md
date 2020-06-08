@@ -1,5 +1,8 @@
 
 # ubsan-fp
+
+**It seems this false positive has been fixed in clang 9. It can be reporduced in previous versions**
+
 A false positive in the undefined behavior sanitizer
 
 ## Repro steps
