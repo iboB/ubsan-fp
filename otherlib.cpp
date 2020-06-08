@@ -4,8 +4,8 @@
 
 #include <cstdio>
 
-static void func(argument* a) { 
-    printf("Do not optimize %p away\n", a); 
+static void func(argument* a) {
+    printf("Do not optimize %p away\n", a);
 }
 
 fptr get_fptr() {
