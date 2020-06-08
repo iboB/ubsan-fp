@@ -1,0 +1,18 @@
+name: CI
+on: [push]
+jobs:
+  clang:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        build: [Debug, Release]
+    steps:
+    - name: Clone
+      uses: actions/checkout@v1
+    - name: Configure
+      run: cmake . -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
+    - name: Build
+      run: make -j
+    - name: Test
+      run: ./executable
